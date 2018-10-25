@@ -1,0 +1,13 @@
+﻿#import: mongoimport -d myfirstdb -c Department3 --type csv --file C:/test/department.csv --headerline
+#export: mongoexport -d database_name -c collection_name -f column_1,column_2,column_3 --csv -o outfile.csv
+	 mongodump -d myfirstdb -o C:/test
+
+
+#startup: D:\set up\mongodb\bin>mongod.exe --dbpath "d:\set up\mongodb\data" 
+	  D:\set up\mongodb\bin>mongo.exe
+
+Import và Export db MongoDB: https://o7planning.org/vi/10279/import-va-export-co-so-du-lieu-mongodb
+Truy vấn MongoDB bằng Java: https://o7planning.org/vi/10289/huong-dan-lap-trinh-java-voi-mongodb#a85818
+
+
+MongoDB Driver: http://mongodb.github.io/mongo-java-driver/3.4/driver/getting-started/installation/
