@@ -1,0 +1,36 @@
+package org.DOAN3.MongoDB;
+
+import java.net.UnknownHostException;
+import java.util.List;
+
+import com.mongodb.MongoClient;
+
+public class MongoUtils {
+	
+	private static final String HOST = "localhost";
+	  private static final int PORT = 27017;
+	  
+	  private static MongoClient getMongoClient_1() throws UnknownHostException {
+	      MongoClient mongoClient = new MongoClient(HOST, PORT);
+	      return mongoClient;
+	  }
+	  
+public static MongoClient getMongoClient() throws UnknownHostException {
+	return getMongoClient_1();
+	  }
+private static void ping() throws UnknownHostException {
+    MongoClient mongoClient = getMongoClient();
+    
+    System.out.println("List all DB:");
+    List<String> dbNames = mongoClient.listDatabases();
+    for (String dbName : dbNames) {
+        System.out.println("+ DB Name: " + dbName);
+    }
+
+    System.out.println("Done!");
+}
+public static void main(String[] args) throws UnknownHostException {
+    ping();
+}
+}
+
