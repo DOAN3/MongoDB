@@ -6,7 +6,6 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.Accumulators;
-import com.mongodb.client.model.Projections;
 import com.mongodb.client.model.Filters;
 
 import java.util.Arrays;
@@ -21,12 +20,12 @@ public class Aggregation {
 	        }
 	    };
 	    MongoClient mongoClient = new MongoClient();
-	    MongoDatabase database = mongoClient.getDatabase("database");
-	    MongoCollection<Document> collection = database.getCollection("ratings");
+	    MongoDatabase database = mongoClient.getDatabase("HoaLan");
+	    MongoCollection<Document> collection = database.getCollection("data");
 	    {
 	    collection.aggregate(
 	    	      Arrays.asList(
-	    	              Aggregates.match(Filters.eq("ratings", "4.0")),
+	    	              Aggregates.match(Filters.eq("Price", "250.000")),
 	    	              Aggregates.group("_id", Accumulators.sum("count", 1))
 	    	      )
 	    	).forEach(printBlock);
