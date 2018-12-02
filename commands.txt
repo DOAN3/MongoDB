@@ -12,13 +12,6 @@ Truy vấn MongoDB bằng Java: https://o7planning.org/vi/10289/huong-dan-lap-tr
 
 MongoDB Driver: http://mongodb.github.io/mongo-java-driver/3.4/driver/getting-started/installation/
 
-db.getCollection('ratings').aggregate([
-{$group:{
-    _id:{
-        "rating":"4.0",
-        "userId":"1"
-    },
-    num:{$sum:1}
-}
-}
-])
+db.getCollection('data1').find( 
+{"Price":{'$gt': 200000}}).count();
+
