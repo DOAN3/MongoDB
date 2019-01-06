@@ -1,4 +1,4 @@
-﻿#import: mongoimport -d myfirstdb -c Department3 --type csv --file C:/test/department.csv --headerline
+﻿#import: mongoimport -d hoalan -c SanPham --type csv --file C:\Users\NDTTr\Documents\GitHub\ElasticSearch\crawler\data.csv --headerline
 #export: mongoexport -d database_name -c collection_name -f column_1,column_2,column_3 --csv -o outfile.csv
 	 mongodump -d myfirstdb -o C:/test
 
